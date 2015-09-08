@@ -14,11 +14,11 @@ Add a line
 
 # usage
 
-Write a new class extends CronJob(or WeeklyCronJob, MonthlyCronJob...) in /cronjobs    
-Add your class name in CronJob::$workers    
-Override work() function, write your cron scripts    
-(optional) Override $runTime (see "format of $runTime" below)    
-(optional) If you also want to run your work() function when sending HTTP requests at /cronjobs/init.php, override     $runOnWebForDebug = true    
+- Write a new class extends CronJob(or WeeklyCronJob, MonthlyCronJob...) in /cronjobs    
+- Add your class name in CronJob::$workers    
+- Override work() function, write your cron scripts    
+- (optional) Override $runTime (see "format of $runTime" below)    
+- (optional) If you also want to run your work() function when sending HTTP requests at /cronjobs/init.php, override $runOnWebForDebug = true    
 
 # format of $runTime
 ```
