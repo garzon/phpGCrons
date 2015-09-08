@@ -14,19 +14,19 @@ Add a line
 
 # usage
 
-Write a new class extends CronJob(or WeeklyCronJob, MonthlyCronJob...) in /cronjobs
-Add your class name in CronJob::$workers
-Override work() function, write your cron scripts
-(optional) Override $runTime (see "format of $runTime" below)
-(optional) If you also want to run your work() function when sending HTTP requests at /cronjobs/init.php, override $runOnWebForDebug = true
+Write a new class extends CronJob(or WeeklyCronJob, MonthlyCronJob...) in /cronjobs    
+Add your class name in CronJob::$workers    
+Override work() function, write your cron scripts    
+(optional) Override $runTime (see "format of $runTime" below)    
+(optional) If you also want to run your work() function when sending HTTP requests at /cronjobs/init.php, override     $runOnWebForDebug = true    
 
 # format of $runTime
 ```
 const DATE_FORMAT = 'Y-m-d-H-i-N';
 $now = date(CronJob::DATE_FORMAT, time());
 ```
-And `*` is supported.
-The method `work()` will be called when `$now` matches the pattern `$runTime` defined in the class.
+And `*` is supported.    
+The method `work()` will be called when `$now` matches the pattern `$runTime` defined in the class.    
 
 ### Examples
 Run at 04:00 every day (daily):
