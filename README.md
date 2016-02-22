@@ -18,7 +18,7 @@ Add a line
 - Add your class name in `CronJob::$workers`    
 - Override `work()` function, write your cron scripts    
 - (optional) Override `$runTime` (see "format of $runTime" below)    
-- (optional) If you also want to run your `work()` function when sending HTTP requests at `/cronjobs/init.php`, override `$runOnWebForDebug = true`    
+- (optional) If you also want to run your `work()` function when sending HTTP requests to run `/cronjobs/init.php` for debugging, override `$runOnWebForDebug = true`    
 
 # format of $runTime
 ```
@@ -35,7 +35,7 @@ Run at 04:00 every day (daily):
 Run at 01:00 on every Monday (weekly):
 ```public $runTime = '*-*-*-01-00-1';```
 
-Run at 01:00 on every minute:
+Run every minute:
 ```public $runTime = '*-*-*-*-*-*';```
 
 Run at 02:00 on 1st day of every month (monthly):
